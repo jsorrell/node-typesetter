@@ -1,0 +1,26 @@
+{
+  "name": "typesetter",
+  "version": "1.0.0",
+  "description": "Generate PDFs from HTML and CSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsorrell/node-typesetter.git"
+  },
+  "author": "Jack Sorrell",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jsorrell/node-typesetter/issues"
+  },
+  "homepage": "https://github.com/jsorrell/node-typesetter#readme",
+  "dependencies": {
+    "autoprefixer": "^8.0.0",
+    "phantomjs-prebuilt": "^2.1.16"
+  },
+  "browserslist": [
+    "Safari >= 4"
+  ]
+}
