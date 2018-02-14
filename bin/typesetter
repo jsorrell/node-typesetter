@@ -32,12 +32,17 @@ if(process.argv.length > 3) {
 	var inputfile = process.argv[process.argv.length-2];
 	var outputfile = process.argv[process.argv.length-1];
 
-	var err = typesetter(options).typesetSync(inputfile, outputfile);
 
-	if (err) {
-		console.error(err);
+	typesetter.typeset({
+		src: inputfile,
+		dest: outputfile
+	}).then(() => {
+		console.log('Done');
+		process.exit(0);
+	}).catch((e) => {
+		console.error(e);
 		process.exit(1);
-	}
+	});
 } else {
 	console.log(helpMessage);
 }
