@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+"use strict";
+var path = require('path');
+var fs = require('fs');
+var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
+var typesetter = require(lib+'/typesetter');
+
+const helpMessage =
+`typesetter ${typesetter.version}
+Usage: typesetter [options] inputfile outputfile
+Options:
+-h --help show this page`;
+
+if(process.argv.length > 3) {
+	var options = {};
+
+	/* Process flags */
+	for (var i = 2; i < process.argv.length - 2; i++) {
+		var arg = process.argv[i];
+		switch (arg) {
+			case '-h':
+			case '--help':
+				console.log(helpMessage);
+				process.exit(1);
+			default:
+				console.log("Invalid argument " + arg);
+				process.exit(1);
+		}
+	}
+
+	var inputfile = process.argv[process.argv.length-2];
+	var outputfile = process.argv[process.argv.length-1];
+
+	var err = typesetter(options).typesetSync(inputfile, outputfile);
+
+	if (err) {
+		console.error(err);
+		process.exit(1);
+	}
+} else {
+	console.log(helpMessage);
+}
