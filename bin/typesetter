@@ -4,15 +4,14 @@
 var path = require('path');
 var fs = require('fs');
 var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
-var typesetter = require(lib+'/typesetter');
+var typesetter = require(lib + '/typesetter');
 
-const helpMessage =
-`typesetter ${typesetter.version}
+const helpMessage = `typesetter ${typesetter.version}
 Usage: typesetter [options] inputfile outputfile
 Options:
 -h --help show this page`;
 
-if(process.argv.length > 3) {
+if (process.argv.length > 3) {
 	var options = {};
 
 	/* Process flags */
@@ -29,8 +28,8 @@ if(process.argv.length > 3) {
 		}
 	}
 
-	var inputfile = process.argv[process.argv.length-2];
-	var outputfile = process.argv[process.argv.length-1];
+	var inputfile = process.argv[process.argv.length - 2];
+	var outputfile = process.argv[process.argv.length - 1];
 
 
 	typesetter.typeset({
