@@ -1,6 +1,6 @@
 {
   "name": "typesetter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate PDFs from HTML and CSS",
   "main": "./lib/typesetter",
   "scripts": {
@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/jsorrell/node-typesetter#readme",
   "dependencies": {
-    "autoprefixer": "^8.0.0",
-    "connect": "^3.6.5",
+    "autoprefixer": "^8.5.1",
+    "connect": "^3.6.6",
     "http-auth": "^3.2.3",
     "phantomjs-prebuilt": "^2.1.16",
     "postcss-middleware": "^1.1.4",
